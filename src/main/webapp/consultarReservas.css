@@ -1,0 +1,195 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 2 de jun. de 2026, 23:09:41
+    Author     : msant
+*/
+
+
+
+/* ====================================
+   RESET
+==================================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    background: #f4f7fc;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* ====================================
+   HEADER
+==================================== */
+
+header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1{
+    color: #1e3a5f;
+    font-size: 2.3rem;
+    font-weight: 700;
+}
+
+/* ====================================
+   CARD PRINCIPAL
+==================================== */
+
+.card{
+    background: #fff;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* ====================================
+   TABELA
+==================================== */
+
+.table-container{
+    overflow-x: auto;
+}
+
+table{
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 15px;
+}
+
+thead{
+    background: #2563eb;
+
+    color: white;
+}
+
+th{
+    padding: 15px;
+
+    text-align: center;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+td{
+    padding: 14px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #334155;
+}
+
+tbody tr:nth-child(even){
+    background: #f8fafc;
+}
+
+tbody tr:hover{
+    background: #e0edff;
+
+    transition: 0.3s;
+}
+
+/* ====================================
+   VALOR
+==================================== */
+
+.valor{
+    color: #059669;
+
+    font-weight: bold;
+}
+
+/* ====================================
+   STATUS
+==================================== */
+
+.confirmada{
+    color: #059669;
+    font-weight: bold;
+}
+
+.pendente{
+    color: #d97706;
+    font-weight: bold;
+}
+
+.cancelada{
+    color: #dc2626;
+    font-weight: bold;
+}
+
+/* ====================================
+   BOTÃO VOLTAR
+==================================== */
+
+.btn-voltar{
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 12px 24px;
+
+    background: #2563eb;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-voltar:hover{
+    background: #1d4ed8;
+}
+
+/* ====================================
+   RESPONSIVIDADE
+==================================== */
+
+@media (max-width: 768px){
+
+    body{
+        padding: 20px 15px;
+    }
+
+    header h1{
+        font-size: 1.8rem;
+    }
+
+    .card{
+        padding: 20px;
+    }
+
+    th,
+    td{
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+

@@ -1,0 +1,165 @@
+<html lang="ptBR">
+<head>
+    <title>StayEase</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>Formulário de Reserva - StayEase</h1>
+</header>
+
+<section class="card">
+    <h2>Nova Reserva</h2>
+
+    <form id="formReserva" action="controle_reserva" method="POST">
+
+        <input type="hidden" name="op" value="CADASTRAR">
+
+        <div class="grid">
+            <div class="campo">
+                <span>Nome do Cliente</span>
+                <label><input type="text" id="nomeCliente" name="txtNomeCliente" placeholder="Nome Completo" required></label>
+            </div>
+
+            <div class="campo">
+                <span>CPF</span>
+                <label><input type="text" id="cpfCliente" name="txtCpfCliente" placeholder="***********" required></label>
+            </div>
+
+            <div class="campo">
+                <span>E-mail</span>
+                <label><input type="text" id="emailCliente" name="txtEmailCliente" placeholder="fulano@gmail.com" required></label>
+            </div>
+
+            <div class="campo">
+                <span>Telefone</span>
+                <label><input type="text" id="telefoneCliente" name="txtTelefoneCliente" placeholder="9999999-9999" required></label>
+            </div>
+
+            <div class="campo">
+                <span>Tipo de Quarto</span>
+                <label><select id="tipoQuarto" name="txtTipoQuarto">
+                    <option value="simples">Simples</option>
+                    <option id="luxo">Luxo</option>
+                </select></label>
+            </div>
+
+            <div class="campo">
+                <span>Check-in</span>
+                <label><input type="date" id="dataCheckin" name="txtDataCheckin" required></label>
+            </div>
+
+            <div class="campo">
+                <span>Check-out</span>
+                <label><input type="date" id="dataCheckout" name="txtDataCheckout" required></label>
+            </div>
+
+            <div class="campo">
+                <span>Quantidade de Hóspedes</span>
+                <input type="number" id="quantHospede" name="txtQuantHospede" min="1" required>
+            </div>
+
+            <div class="campo">
+                <span>Status da Reserva</span>
+                <label><select id="statusReserva" name="txtStatusReserva">
+                    <option value="Confirmada">Confirmada</option>
+                    <option value="Pendente">Pendente</option>
+                    <option value="Cancelada">Cancelada</option>
+                </select></label>
+            </div>
+            <button type="submit" id="btnCadReserva">Cadastrar Reserva</button>
+        </div>
+    </form>
+</section>
+
+<section class="card">
+
+    <h2>Consultar Reservas</h2>
+
+    <form action="controle_reserva" method="GET">
+
+        <input type="hidden"
+               name="op"
+               value="CONSULTAR TODOS">
+
+        <button type="submit">
+            Consultar Todas as Reservas
+        </button>
+
+    </form>
+
+</section>
+
+<section class="card">
+
+    <h2>Consultar Reserva por ID</h2>
+
+    <form action="controle_reserva" method="GET">
+
+        <input type="hidden"
+               name="op"
+               value="CONSULTAR BY ID">
+
+        <input type="number"
+               name="txtId"
+               placeholder="ID da Reserva"
+               required
+        >
+
+        <button type="submit">
+            Consultar
+        </button>
+
+    </form>
+
+</section>
+
+<section class="card">
+
+    <section class="card">
+
+        <h2>Atualizar Reserva</h2>
+
+        <form action="controle_reserva" method="GET">
+
+            <input type="hidden"
+                   name="op"
+                   value="ATUALIZAR">
+
+            <input type="number"
+                   name="txtId"
+                   placeholder="ID da Reserva"
+                   required>
+
+            <button type="submit" class="btnUpdate">
+                Buscar para Atualizar
+            </button>
+
+        </form>
+
+    </section>
+
+    <h2>Excluir Reserva</h2>
+
+    <form action="controle_reserva" method="POST">
+
+        <input type="hidden"
+               name="op"
+               value="DELETAR">
+
+        <input type="number"
+               name="txtId"
+               placeholder="ID da Reserva">
+
+        <button type="submit">
+            Excluir
+        </button>
+
+    </form>
+
+</section>
+
+</body>
+</html>
