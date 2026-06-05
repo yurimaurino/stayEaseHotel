@@ -12,18 +12,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Resultado</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Operação Realizada</h1>
+<div class="card">
 
-<h3>
-    <%= request.getAttribute("message") %>
-</h3>
+    <div class="icone">✅</div>
 
-<a href="index.html">
-    Voltar
-</a>
+    <h1>Operação Realizada</h1>
+
+    <p class="mensagem">
+        <%= request.getAttribute("message") %>
+    </p>
+
+    <a href="index.html" >
+        <button class="btn">Voltar ao inicio</button>
+    </a>
+
+</div>
 
 </body>
 </html>

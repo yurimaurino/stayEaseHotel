@@ -16,7 +16,7 @@ import java.util.List;
 
 @WebServlet(name = "controle_reserva",
         urlPatterns = {"/controle_reserva"})
-public class controle_reserva extends HttpServlet {
+public class ReservaController extends HttpServlet {
 
     protected void processRequest(
             HttpServletRequest request,
@@ -62,8 +62,7 @@ public class controle_reserva extends HttpServlet {
                         Integer.parseInt(
                                 request.getParameter("txtQuantHospede")));
 
-                r.setStatusReserva(
-                        request.getParameter("txtStatusReserva"));
+                r.setStatusReserva("Confirmada");
 
                 r.calcularValorTotal();
 

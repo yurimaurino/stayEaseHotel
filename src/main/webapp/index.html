@@ -61,14 +61,14 @@
                 <input type="number" id="quantHospede" name="txtQuantHospede" min="1" required>
             </div>
 
-            <div class="campo">
-                <span>Status da Reserva</span>
-                <label><select id="statusReserva" name="txtStatusReserva">
-                    <option value="Confirmada">Confirmada</option>
-                    <option value="Pendente">Pendente</option>
-                    <option value="Cancelada">Cancelada</option>
-                </select></label>
-            </div>
+<!--            <div class="campo">-->
+<!--                <span>Status da Reserva</span>-->
+<!--                <label><select id="statusReserva" name="txtStatusReserva">-->
+<!--                    <option value="Confirmada">Confirmada</option>-->
+<!--                    <option value="Pendente">Pendente</option>-->
+<!--                    <option value="Cancelada">Cancelada</option>-->
+<!--                </select></label>-->
+<!--            </div>-->
             <button type="submit" id="btnCadReserva">Cadastrar Reserva</button>
         </div>
     </form>
@@ -116,8 +116,6 @@
 
 </section>
 
-<section class="card">
-
     <section class="card">
 
         <h2>Atualizar Reserva</h2>
@@ -140,7 +138,7 @@
         </form>
 
     </section>
-
+    <section class="card">
     <h2>Excluir Reserva</h2>
 
     <form action="controle_reserva" method="POST">
@@ -153,7 +151,7 @@
                name="txtId"
                placeholder="ID da Reserva">
 
-        <button type="submit">
+        <button type="submit" class="btnDelete">
             Excluir
         </button>
 
