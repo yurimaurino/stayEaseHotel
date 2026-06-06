@@ -37,7 +37,7 @@ public class ReservaDAO {
 
         public void atualizar(Reserva reserva) throws ClassNotFoundException, SQLException{
             Connection con = conexaoBD.getConexao();
-            PreparedStatement comando = con.prepareStatement("update reserva set email_cliente = ?,telefone_cliente = ?, tipo_quarto = ?, data_checkin = ?, data_checkout = ?, quant_hospede = ?, valor_total = ? where id_reserva = ?");
+            PreparedStatement comando = con.prepareStatement("update reserva set email_cliente = ?,telefone_cliente = ?, tipo_quarto = ?, data_checkin = ?, data_checkout = ?, quant_hospede = ?, valor_total = ?, status_reserva = ? where id_reserva = ?");
             comando.setString(1, reserva.getEmailCliente());
             comando.setString(2, reserva.getTelefoneCliente());
             comando.setString(3, reserva.getTipoQuarto());
@@ -45,7 +45,8 @@ public class ReservaDAO {
             comando.setDate(5, java.sql.Date.valueOf(reserva.getDataCheckout()));
             comando.setInt(6, reserva.getQuant_hospede());
             comando.setDouble(7, reserva.getValorTotal());
-            comando.setInt(8, reserva.getIdReserva());
+            comando.setString(8, reserva.getStatusReserva());
+            comando.setInt(9, reserva.getIdReserva());
             comando.execute();
             con.close();
         }

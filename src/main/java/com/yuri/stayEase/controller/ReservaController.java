@@ -247,6 +247,10 @@ public class ReservaController extends HttpServlet {
                                     request.getParameter(
                                             "txtQuantHospede")));
 
+                    r.setStatusReserva(
+                            request.getParameter("txtStatusReserva")
+                    );
+
                     r.calcularValorTotal();
 
                     rdao.atualizar(r);
