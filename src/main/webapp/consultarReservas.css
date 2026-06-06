@@ -2,7 +2,7 @@
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
-/* 
+/*
     Created on : 2 de jun. de 2026, 23:09:41
     Author     : msant
 */
@@ -36,7 +36,7 @@ header{
 }
 
 header h1{
-    color: #1e3a5f;
+    color: #000000;
     font-size: 2.3rem;
     font-weight: 700;
 }
@@ -80,7 +80,7 @@ th{
 
     text-align: center;
 
-    font-size: 14px;
+    font-size: 18px;
 
     font-weight: 600;
 }
@@ -95,10 +95,12 @@ td{
     color: #334155;
 }
 
-th:hover{
-    background: #e0edff;
+.linhas-reserva:hover{
+    background: #b0b7c5;
 
     transition: 0.3s;
+
+    cursor: pointer;
 }
 
 /* ====================================
@@ -128,6 +130,11 @@ th:hover{
 .cancelada{
     color: #dc2626;
     font-weight: bold;
+    text-decoration: line-through;
+}
+
+.cancelada .valor{
+    color: red;
 }
 
 /* ====================================

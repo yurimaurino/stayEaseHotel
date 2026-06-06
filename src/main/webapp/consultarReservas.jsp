@@ -23,8 +23,9 @@
 </head>
 <body>
 
-<h1>Reservas Cadastradas</h1>
-
+<header>
+    <h1>Reservas Cadastradas</h1>
+</header>
 <table>
 
     <tr>
@@ -45,13 +46,13 @@
         String status = r.getStatusReserva();
     %>
 
-    <tr>
+    <tr class="linhas-reserva <%= "cancelada".equalsIgnoreCase(status) ? "cancelada" : "" %>">
         <td><%= r.getIdReserva() %></td>
         <td><%= r.getNomeCliente() %></td>
         <td><%= r.getTipoQuarto() %></td>
         <td><%= r.getDataCheckin() %></td>
         <td><%= r.getDataCheckout() %></td>
-        <td class="valor">R$ <%= r.getValorTotal() %></td>
+        <td class="valor <%= "cancelada".equalsIgnoreCase(status) ? "valor-cancelado" : ""  %> ">R$ <%= r.getValorTotal() %></td>
         <td class="<%=status.toLowerCase()%>">
             <%= status %>
         </td>
