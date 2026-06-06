@@ -2,6 +2,7 @@ package com.yuri.stayEase.controller;
 
 import com.yuri.stayEase.dao.ReservaDAO;
 import com.yuri.stayEase.model.Reserva;
+import com.yuri.stayEase.validator.ReservaValidator;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -68,6 +69,8 @@ public class ReservaController extends HttpServlet {
 
                 try {
 
+                    ReservaValidator.validar(r);
+
                     rdao.inserir(r);
 
                     request.setAttribute(
@@ -78,7 +81,9 @@ public class ReservaController extends HttpServlet {
                                     "resultado.jsp")
                             .forward(request, response);
 
-                } catch (ClassNotFoundException | SQLException ex) {
+                } catch (IllegalArgumentException |
+                         ClassNotFoundException |
+                         SQLException ex) {
 
                     request.setAttribute(
                             "message",
