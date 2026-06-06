@@ -20,8 +20,6 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="consultarReservas.css">
     <title>Lista de Reservas</title>
-
-
 </head>
 <body>
 
@@ -43,14 +41,20 @@
         for(Reserva r : lista){
     %>
 
+    <%
+        String status = r.getStatusReserva();
+    %>
+
     <tr>
         <td><%= r.getIdReserva() %></td>
         <td><%= r.getNomeCliente() %></td>
         <td><%= r.getTipoQuarto() %></td>
         <td><%= r.getDataCheckin() %></td>
         <td><%= r.getDataCheckout() %></td>
-        <td>R$ <%= r.getValorTotal() %></td>
-        <td><%= r.getStatusReserva() %></td>
+        <td class="valor">R$ <%= r.getValorTotal() %></td>
+        <td class="<%=status.toLowerCase()%>">
+            <%= status %>
+        </td>
     </tr>
 
     <%
@@ -62,7 +66,7 @@
 <br>
 
 <a href="index.html">
-    Voltar
+    <button class="btn-voltar">Voltar</button>
 </a>
 
 </body>

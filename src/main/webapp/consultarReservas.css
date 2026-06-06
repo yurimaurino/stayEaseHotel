@@ -75,12 +75,6 @@ table{
     margin-top: 15px;
 }
 
-thead{
-    background: #2563eb;
-
-    color: white;
-}
-
 th{
     padding: 15px;
 
@@ -101,11 +95,7 @@ td{
     color: #334155;
 }
 
-tbody tr:nth-child(even){
-    background: #f8fafc;
-}
-
-tbody tr:hover{
+th:hover{
     background: #e0edff;
 
     transition: 0.3s;
@@ -165,7 +155,7 @@ tbody tr:hover{
 }
 
 .btn-voltar:hover{
-    background: #1d4ed8;
+    background: #002f55;
 }
 
 /* ====================================

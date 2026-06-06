@@ -33,19 +33,19 @@
 
            <select name="txtTipoQuarto">
 
-           <option value="simples"
-           <%= r.getTipoQuarto().equalsIgnoreCase("simples")
-            ? "selected" : "" %>>
-           Simples
-            </option>
+               <option value="Simples"
+                   <%= r.getTipoQuarto().equalsIgnoreCase("simples")
+                           ? "selected" : "" %>>
+                   Simples
+                </option>
 
-            <option value="luxo"
-                <%= r.getTipoQuarto().equalsIgnoreCase("luxo")
-                    ? "selected" : "" %>>
-                Luxo
-            </option>
+                <option value="Luxo"
+                    <%= r.getTipoQuarto().equalsIgnoreCase("luxo")
+                            ? "selected" : "" %>>
+                    Luxo
+                </option>
 
-        </select>
+            </select>
 
 <br><br>
             <br><br>       
@@ -60,7 +60,28 @@
             Hóspedes:
             <input type="number" name="txtQuantHospede" value="<%= r.getQuant_hospede() %>">
             <br><br>
-            
+
+            Status Reserva:
+            <select name="txtStatusReserva">
+                <option value="Confirmada"
+                        <%= r.getStatusReserva().equalsIgnoreCase("confirmada")
+                                ? "selected" : "" %>>
+                    Confirmada
+                </option>
+
+                <option value="Pendente"
+                        <%= r.getStatusReserva().equalsIgnoreCase("pendente")
+                                ? "selected" : "" %>>
+                    Pendente
+                </option>
+
+                <option value="Cancelada"
+                        <%= r.getStatusReserva().equalsIgnoreCase("cancelada")
+                                ? "selected" : "" %>>
+                    Cancelada
+                </option>
+            </select>
+
             <button type="submit"> Salvar Alterações </button>
         </form>
     </body>
