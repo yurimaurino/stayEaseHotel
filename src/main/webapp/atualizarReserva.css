@@ -1,179 +1,148 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 2 de jun. de 2026, 23:21:43
-    Author     : msant
-*/
-
-/*
-    atualizarReserva.css
-    StayEase
-*/
-
-
-/*
-    atualizarReserva.css
-    StayEase
-*/
-
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:"Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
 }
 
 body{
-    background:#f4f7fc;
-    min-height:100vh;
+    background: #f4f7fc;
+    min-height: 100vh;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    padding:20px;
+    padding: 20px;
 }
 
 .card{
-    background:white;
+    background: white;
 
-    width:100%;
-    max-width:700px;
+    width: 100%;
+    max-width: 900px;
 
-    padding:30px;
+    padding: 30px;
 
-    border-radius:18px;
+    border-radius: 18px;
 
-    box-shadow:0 8px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
 h1{
-    text-align:center;
-
-    color:#1e3a5f;
-
-    margin-bottom:30px;
+    text-align: center;
+    color: #1e3a5f;
+    margin-bottom: 25px;
 }
 
-.form-grid{
-    display:grid;
-
-    grid-template-columns:1fr;
-
-    gap:18px;
+.dados{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
 }
 
 .campo{
-    display:flex;
-    flex-direction:column;
+    background: #f8fafc;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    border: 1px solid #e2e8f0;
 }
 
-.campo label{
-    margin-bottom:8px;
+.campo strong{
+    display: block;
 
-    font-weight:600;
+    margin-bottom: 8px;
 
-    color:#334155;
+    color: #1e3a5f;
 }
 
-.campo input,
-.campo select{
-    width:100%;
+input,
+select{
+    width: 100%;
 
-    padding:12px;
+    padding: 10px 12px;
 
-    border:1px solid #d1d5db;
+    border: 1px solid #cbd5e1;
 
-    border-radius:10px;
+    border-radius: 8px;
 
-    font-size:15px;
+    font-size: 14px;
 
-    transition:.3s;
+    outline: none;
+
+    transition: 0.3s;
 }
 
-.campo input:focus,
-.campo select:focus{
-    outline:none;
+input:focus,
+select:focus{
+    border-color: #2563eb;
 
-    border-color:#2563eb;
-
-    box-shadow:0 0 0 4px rgba(37,99,235,0.15);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.15);
 }
 
 .acoes{
-    display:flex;
+    margin-top: 30px;
 
-    justify-content:center;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
 
-    gap:15px;
+.btn-salvar,
+.btn-voltar{
+    padding: 12px 25px;
 
-    margin-top:25px;
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    text-decoration: none;
+
+    color: white;
+
+    transition: 0.3s;
 }
 
 .btn-salvar{
-    border:none;
-
-    padding:14px 25px;
-
-    border-radius:10px;
-
-    background:#10b981;
-
-    color:white;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
+    background: #16a34a;
 }
 
 .btn-salvar:hover{
-    background:#059669;
+    background: #15803d;
 }
 
 .btn-voltar{
-    padding:14px 25px;
+    background: #2563eb;
 
-    border-radius:10px;
-
-    background:#2563eb;
-
-    color:white;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    transition:.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-voltar:hover{
-    background:#1d4ed8;
+    background: #1d4ed8;
 }
 
-@media(max-width:768px){
+@media (max-width: 768px){
 
-    .card{
-        padding:20px;
-    }
-
-    h1{
-        font-size:1.8rem;
+    .dados{
+        grid-template-columns: 1fr;
     }
 
     .acoes{
-        flex-direction:column;
+        flex-direction: column;
     }
 
     .btn-salvar,
     .btn-voltar{
-        width:100%;
-        text-align:center;
+        width: 100%;
+        text-align: center;
     }
 }
-
