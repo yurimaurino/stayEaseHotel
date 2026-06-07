@@ -7,118 +7,153 @@
 </head>
 <body>
 <header>
-    <h1>Formulário de Reserva - StayEase</h1>
+    <div class="header-container">
+        <div class="header-top">
+            <img src="assets/bed.png" alt="Logo de cama">
+            <h1>Reservas de Hotel</h1>
+        </div>
+        <p>Cadastro, consulta, edição e exclusão</p>
+    </div>
 </header>
 
-<section class="card">
-    <h2>Nova Reserva</h2>
+<main>
+    <h2>Início</h2>
 
-    <form id="formReserva" action="controle_reserva" method="POST">
-
-        <input type="hidden" name="op" value="CADASTRAR">
-
-        <div class="grid">
-            <div class="campo">
-                <span>Nome do Cliente</span>
-                <label><input type="text" id="nomeCliente" name="txtNomeCliente" placeholder="Nome Completo" required></label>
+    <div class="card-reserva">
+        <div class="header-card-reserva">
+            <div class="header-card-top">
+                <img src="assets/plus.png" alt="Icone de Plus Icon">
+                <h3>Nova reserva</h3>
             </div>
-
-            <div class="campo">
-                <span>CPF</span>
-                <label><input type="text" id="cpfCliente" name="txtCpfCliente" placeholder="***********" required></label>
-            </div>
-
-            <div class="campo">
-                <span>E-mail</span>
-                <label><input type="text" id="emailCliente" name="txtEmailCliente" placeholder="fulano@gmail.com" required></label>
-            </div>
-
-            <div class="campo">
-                <span>Telefone</span>
-                <label><input type="text" id="telefoneCliente" name="txtTelefoneCliente" placeholder="9999999-9999" required></label>
-            </div>
-
-            <div class="campo">
-                <span>Tipo de Quarto</span>
-                <label><select id="tipoQuarto" name="txtTipoQuarto">
-                    <option value="simples">Simples</option>
-                    <option id="luxo">Luxo</option>
-                </select></label>
-            </div>
-
-            <div class="campo">
-                <span>Check-in</span>
-                <label><input type="date" id="dataCheckin" name="txtDataCheckin" required></label>
-            </div>
-
-            <div class="campo">
-                <span>Check-out</span>
-                <label><input type="date" id="dataCheckout" name="txtDataCheckout" required></label>
-            </div>
-
-            <div class="campo">
-                <span>Quantidade de Hóspedes</span>
-                <input type="number" id="quantHospede" name="txtQuantHospede" min="1" required>
-            </div>
-
-<!--            <div class="campo">-->
-<!--                <span>Status da Reserva</span>-->
-<!--                <label><select id="statusReserva" name="txtStatusReserva">-->
-<!--                    <option value="Confirmada">Confirmada</option>-->
-<!--                    <option value="Pendente">Pendente</option>-->
-<!--                    <option value="Cancelada">Cancelada</option>-->
-<!--                </select></label>-->
-<!--            </div>-->
-            <button type="submit" id="btnCadReserva">Cadastrar Reserva</button>
+            <p>Preencha os dados para cadastrar uma reserva.</p>
         </div>
-    </form>
-</section>
+        <div class="form-card-reserva">
+            <form id="formReserva" action="controle_reserva" method="POST">
 
-<section class="card">
+                <input type="hidden" name="op" value="CADASTRAR">
 
-    <h2>Consultar Reservas</h2>
+                <div class="grid">
+                    <div class="campo">
+                        <span>Hóspede *</span>
+                        <label><input type="text" id="nomeCliente" name="txtNomeCliente" placeholder="Nome Completo" required></label>
+                    </div>
 
-    <form action="controle_reserva" method="GET">
+                    <div class="campo">
+                        <span>CPF *</span>
+                        <label><input type="text" id="cpfCliente" name="txtCpfCliente" placeholder="***********" required></label>
+                    </div>
 
-        <input type="hidden"
-               name="op"
-               value="CONSULTAR TODOS">
+                    <div class="campo">
+                        <span>E-mail *</span>
+                        <label><input type="text" id="emailCliente" name="txtEmailCliente" placeholder="fulano@gmail.com" required></label>
+                    </div>
 
-        <button type="submit">
-            Consultar Todas as Reservas
+                    <div class="campo">
+                        <span>Telefone *</span>
+                        <label><input type="text" id="telefoneCliente" name="txtTelefoneCliente" placeholder="9999999-9999" required></label>
+                    </div>
+
+                    <div class="campo">
+                        <span>Tipo de Quarto *</span>
+                        <label><select id="tipoQuarto" name="txtTipoQuarto">
+                            <option value="simples">Simples</option>
+                            <option value="luxo">Luxo</option>
+                        </select></label>
+                    </div>
+
+                    <div class="campo">
+                        <span>Check-in *</span>
+                        <label><input type="date" id="dataCheckin" name="txtDataCheckin" required></label>
+                    </div>
+
+                    <div class="campo">
+                        <span>Check-out *</span>
+                        <label><input type="date" id="dataCheckout" name="txtDataCheckout" required></label>
+                    </div>
+
+                    <div class="campo">
+                        <span>Quantidade de Hóspedes *</span>
+                        <input type="number" id="quantHospede" name="txtQuantHospede" min="1" required>
+                    </div>
+                    <button type="submit" id="btnCadReserva">Cadastrar Reserva</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<div class="outras-acoes">
+    OUTRAS AÇÕES
+</div>
+
+<div class="acoes-container">
+    <a href="controle_reserva?op=CONSULTAR TODOS" class="acoes-link">
+        <div class="acoes-img">
+            <img src="assets/menu.png" alt="Icone de Menu Bar">
+        </div>
+        <div class="acoes-descricao">Consultar todas</div>
+        <div class="acoes-paragrafo">Ver a lista completa de reservas</div>
+    </a>
+    <a href="#" id="btnConsultar" class="acoes-link">
+        <div class="acoes-img">
+            <img src="assets/loupe.png" alt="Icone de Menu Bar">
+        </div>
+        <div class="acoes-descricao">Buscar por ID</div>
+        <div class="acoes-paragrafo">Localizar uma reserva específica</div>
+    </a>
+    <a href="#" id="btnAtualizar" class="acoes-link">
+        <div class="acoes-img">
+            <img src="assets/pencil.png" alt="Icone de Menu Bar">
+        </div>
+        <div class="acoes-descricao">Atualizar</div>
+        <div class="acoes-paragrafo">Editar dados de uma reserva</div>
+    </a>
+    <a href="#" id="btnExcluir" class="acoes-link">
+        <div class="acoes-img">
+            <img src="assets/delete.png" alt="Icone de Menu Bar">
+        </div>
+        <div class="acoes-descricao">Excluir</div>
+        <div class="acoes-paragrafo">Remover uma reserva</div>
+    </a>
+ </div>
+
+<div id="modalConsultar" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Consultar Reserva</h3>
+
+        <form action="controle_reserva" method="GET">
+
+            <input type="hidden"
+                   name="op"
+                   value="CONSULTAR BY ID">
+
+            <input type="number"
+                   name="txtId"
+                   placeholder="ID da Reserva"
+                   required>
+
+            <button type="submit">
+                Consultar
+            </button>
+
+        </form>
+
+        <button type="button"
+                class="btn-fechar">
+            Fechar
         </button>
 
-    </form>
+    </div>
 
-</section>
+</div>
 
-<section class="card">
+<div id="modalAtualizar" class="modal">
 
-    <h2>Consultar Reserva por ID</h2>
+    <div class="modal-content">
 
-    <form action="controle_reserva" method="GET">
-
-        <input type="hidden"
-               name="op"
-               value="CONSULTAR BY ID">
-
-        <input type="number"
-               name="txtId"
-               placeholder="ID da Reserva"
-               required
-        >
-
-        <button type="submit">
-            Consultar
-        </button>
-
-    </form>
-
-</section>
-
-    <section class="card">
-
-        <h2>Atualizar Reserva</h2>
+        <h3>Atualizar Reserva</h3>
 
         <form action="controle_reserva" method="GET">
 
@@ -131,33 +166,54 @@
                    placeholder="ID da Reserva"
                    required>
 
-            <button type="submit" class="btnUpdate">
-                Buscar para Atualizar
+            <button type="submit">
+                Buscar Reserva
             </button>
 
         </form>
 
-    </section>
-    <section class="card">
-    <h2>Excluir Reserva</h2>
-
-    <form action="controle_reserva" method="POST">
-
-        <input type="hidden"
-               name="op"
-               value="DELETAR">
-
-        <input type="number"
-               name="txtId"
-               placeholder="ID da Reserva">
-
-        <button type="submit" class="btnDelete">
-            Excluir
+        <button type="button"
+                class="btn-fechar">
+            Fechar
         </button>
 
-    </form>
+    </div>
 
-</section>
+</div>
+
+<div id="modalExcluir" class="modal">
+
+    <div class="modal-content">
+
+        <h3>Excluir Reserva</h3>
+
+        <form action="controle_reserva" method="POST">
+
+            <input type="hidden"
+                   name="op"
+                   value="DELETAR">
+
+            <input type="number"
+                   name="txtId"
+                   placeholder="ID da Reserva"
+                   required>
+
+            <button type="submit">
+                Excluir Reserva
+            </button>
+
+        </form>
+
+        <button type="button"
+                class="btn-fechar">
+            Fechar
+        </button>
+
+    </div>
+
+</div>
+
+<script src="assets/scripts/script.js"></script>
 
 </body>
 </html>
